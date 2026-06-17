@@ -1,0 +1,49 @@
+My observation on the task of handson 7
+
+Overview
+
+In this hands-on, I learned how to manage database schema changes using Alembic with SQLAlchemy. Alembic helps track database versions and makes it easier to apply or roll back schema changes safely.
+
+Tasks Completed
+
+Alembic Setup
+- Installed Alembic.
+- Initialized Alembic in the project using:
+
+python -m alembic init migrations
+
+This created:
+
+alembic.ini
+migrations/
+migrations/env.py
+migrations/versions/
+Configuration
+Configured the MySQL database connection in alembic.ini.
+Imported SQLAlchemy metadata into env.py:
+from models import Base
+
+target_metadata = Base.metadata
+
+This allowed Alembic to compare ORM models with the database schema.
+
+Initial Migration
+
+Generated the first migration using:
+
+python -m alembic revision --autogenerate -m "initial schema"
+Verified the generated migration file.
+Checked that it contained upgrade() and downgrade() functions.
+Migration Tracking
+
+Viewed migration information using:
+
+python -m alembic history
+python -m alembic heads
+python -m alembic current
+
+This helped track the current database version and migration history.
+
+Schema Versioning
+
+Learned how Alembic stores migration information and maintains a history of database changes through revision files.

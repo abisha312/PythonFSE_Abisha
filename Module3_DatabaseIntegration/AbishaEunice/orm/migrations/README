@@ -1,0 +1,30 @@
+# Alembic Migrations
+
+This folder contains the Alembic migration files for the `college_db_orm` database.
+
+## What I Did
+
+1. Installed Alembic.
+2. Initialized Alembic using:
+
+python -m alembic init migrations
+
+3. Configured the MySQL connection in `alembic.ini`.
+4. Connected Alembic to SQLAlchemy models through `Base.metadata`.
+5. Generated the initial migration:
+
+python -m alembic revision --autogenerate -m "initial schema"
+
+6. Verified the generated migration file.
+7. Checked migration history using:
+
+python -m alembic history
+
+## Current Revision
+
+
+b0c3c5d548bb
+
+## Purpose
+
+Alembic helps track database schema changes, apply updates, and roll back changes when needed. It works like version control for the database schema.

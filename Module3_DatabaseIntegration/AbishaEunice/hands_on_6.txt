@@ -1,0 +1,48 @@
+My observation on the task of handson 6
+
+Overview
+
+In this hands-on, I used SQLAlchemy and Django ORM to interact with a MySQL database using Python objects instead of writing raw SQL queries.
+
+Tasks Completed
+
+SQLAlchemy Model Creation
+- Connected to the `college_db_orm` MySQL database.
+- Created ORM models for:
+  - Department
+  - Student
+  - Course
+  - Enrollment
+  - Professor
+- Defined relationships using `ForeignKey` and `relationship()`.
+
+Database Creation
+- Generated tables from the ORM models using:
+
+Base.metadata.create_all(engine)
+CRUD Operations
+Inserted sample departments, students, courses, and enrollments.
+Retrieved records using ORM queries.
+Updated existing records.
+Deleted enrollment records.
+Committed changes using SQLAlchemy sessions.
+N+1 Query Problem
+Observed the N+1 problem while loading enrollment, student, and course data.
+Enabled SQL logging using echo=True to view generated SQL queries.
+Fixing N+1 with joinedload()
+
+Used eager loading:
+
+session.query(Enrollment).options(
+    joinedload(Enrollment.student),
+    joinedload(Enrollment.course)
+).all()
+
+This reduced database calls and improved performance.
+
+Django ORM (Bonus)
+Created Django models for Department, Student, Course, and Enrollment.
+Used:
+Enrollment.objects.select_related('student', 'course').all()
+
+to fetch related data efficiently and avoid the N+1 problem.
