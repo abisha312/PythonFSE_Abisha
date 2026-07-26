@@ -11,22 +11,22 @@ The V-Model illustrates how each phase of the Software Development Life Cycle (S
 
 ```text
 
-             DEVELOPMENT (SDLC)                     TESTING (TDLC)
+      DEVELOPMENT (SDLC)                     TESTING (TDLC)
 
-      Requirements Analysis             Acceptance Testing
-               \                               /
-                \                             /
-                 \                           /
-                  \                         /
-              System Design           System Testing
-                    \                 /
-                     \               /
-                      \             /
-               Architecture Design  Integration Testing
-                         \         /
-                          \       /
-                           \     /
-                      Module Design  Unit Testing
+      Requirements Analysis               Acceptance Testing
+               \                                 /
+                \                               /
+                 \                             /
+                  \                           /
+              System Design             System Testing
+                    \                       /
+                     \                     /
+                      \                   /
+              Architecture Design    Integration Testing
+                         \              /
+                          \            /
+                           \          /
+                   Module Design    Unit Testing
                               \     /
                                \   /
                                 \ /
