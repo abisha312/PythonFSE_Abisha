@@ -38,6 +38,8 @@ The left side of the V-Model represents the development phases, while the right 
 
 ---
 
+---
+
 ## 10. SDLC and TDLC Phase Mapping & Test Artifacts
 
 | SDLC Phase | Corresponding TDLC Phase | Test Artifact Produced During Development Phase |
@@ -52,23 +54,23 @@ The left side of the V-Model represents the development phases, while the right 
 
 #### Requirements Analysis ↔ Acceptance Testing
 
-During the requirements phase, QA reviews business requirements and prepares acceptance test plans and acceptance criteria. The Requirement Traceability Matrix (RTM) is also created to ensure every requirement is covered by at least one test case.
+During the Requirements Analysis phase, QA reviews the business requirements and prepares the Acceptance Test Plan and User Acceptance Test Scenarios. A Requirement Traceability Matrix (RTM) is also created to ensure every requirement can be traced to one or more test cases.
 
 #### System Design ↔ System Testing
 
-When the overall system design is completed, QA prepares system test plans and end-to-end test cases to validate the complete application from the user's perspective.
+Once the overall system design is finalized, QA prepares the System Test Plan and End-to-End System Test Cases to verify that the complete application functions as expected.
 
 #### Architecture Design ↔ Integration Testing
 
-Architecture design defines how different modules communicate. QA prepares integration test plans, interface test cases, and API contract tests to verify interactions between components.
+During the Architecture Design phase, QA prepares Integration Test Plans, Interface Test Cases, and API Contract Test Cases to validate communication between different modules.
 
 #### Module Design ↔ Unit Testing
 
-Developers design individual modules and functions. Unit test cases, unit test suites, and supporting stubs or drivers are prepared to verify each module independently.
+Developers design individual modules and functions while Unit Test Cases, Unit Test Suites, and supporting Stubs & Drivers are prepared to validate each module independently.
 
 #### Coding ↔ Unit Test Execution
 
-Developers implement the application and execute unit tests before integrating the modules into the complete system.
+Developers implement the application and execute unit tests to ensure each module works correctly before integration begins.
 
 ---
 
@@ -76,73 +78,73 @@ Developers implement the application and execute unit tests before integrating t
 
 ### 1. Unit Testing
 
-**Entry Criteria**
+#### Entry Criteria
 
 - Module design document is finalized and approved.
-- Source code has been written without compilation errors.
-- Unit test cases/scripts are prepared and reviewed.
+- Source code is developed without compilation errors.
+- Unit test cases are prepared and reviewed.
 - Development environment is ready.
 
-**Exit Criteria**
+#### Exit Criteria
 
 - All planned unit test cases have been executed successfully.
 - Code coverage meets the project's minimum threshold (for example, 80%).
-- All critical unit-level defects are resolved and verified.
+- All Critical defects are resolved and verified.
 - Unit testing report is completed.
 
 ---
 
 ### 2. Integration Testing
 
-**Entry Criteria**
+#### Entry Criteria
 
-- Unit testing is completed and signed off.
-- Individual modules are integrated.
+- Unit testing has been completed successfully.
+- Individual modules have been integrated.
 - Integration test cases are prepared.
 - Integration testing environment and test data are available.
 
-**Exit Criteria**
+#### Exit Criteria
 
 - All interface and API integration test cases have been executed.
-- Data flow between integrated modules works correctly.
-- No unresolved Critical or High severity integration defects remain.
-- Integration testing summary report is completed.
+- Communication between modules functions correctly.
+- No unresolved Critical or High severity defects remain.
+- Integration testing report is completed.
 
 ---
 
 ### 3. System Testing
 
-**Entry Criteria**
+#### Entry Criteria
 
-- Integration testing is successfully completed.
-- Complete application build is deployed to the QA environment.
-- System test plan and end-to-end test cases are approved.
+- Integration testing has been successfully completed.
+- Complete application build is deployed in the QA environment.
+- System Test Plan and End-to-End Test Cases are approved.
 
-**Exit Criteria**
+#### Exit Criteria
 
 - All planned system test cases have been executed.
 - No open Critical or High severity defects remain.
-- Application satisfies all functional requirements.
-- System testing summary report is approved.
+- The application satisfies all functional requirements.
+- System Testing Summary Report is approved.
 
 ---
 
 ### 4. Acceptance Testing (UAT)
 
-**Entry Criteria**
+#### Entry Criteria
 
-- System testing has been completed successfully.
+- System testing is completed successfully.
 - UAT environment is configured with production-like data.
 - User stories and acceptance criteria are available.
-- Business users are ready to perform validation.
+- Business users are ready to validate the application.
 
-**Exit Criteria**
+#### Exit Criteria
 
 - All business scenarios have been executed successfully.
-- Formal business sign-off is received from stakeholders.
+- Formal business approval has been received.
 - All acceptance criteria are satisfied.
 - No blocking business issues remain.
-- Application is approved for production deployment.
+- The application is approved for production deployment.
 
 ---
 
@@ -154,9 +156,9 @@ Developers implement the application and execute unit tests before integrating t
 
 QA participates in requirement review meetings before development begins to identify ambiguous, incomplete, or conflicting requirements.
 
-**Course Management API Example**
+**Course Management API Application**
 
-Before development starts, QA reviews the requirements for the `POST /api/courses/` endpoint to ensure validation rules are clearly defined, such as mandatory fields, maximum course name length, unique course codes, and valid credit ranges.
+QA reviews the requirements for the `POST /api/courses/` endpoint to ensure validation rules are clearly defined, such as mandatory fields, maximum course name length, unique course codes, and valid credit ranges before coding begins.
 
 ---
 
@@ -164,11 +166,11 @@ Before development starts, QA reviews the requirements for the `POST /api/course
 
 **QA Engagement**
 
-QA reviews API specifications, Swagger documentation, database schema, and overall application design before coding begins.
+QA reviews API specifications, Swagger documentation, database schema, and overall application design before implementation.
 
-**Course Management API Example**
+**Course Management API Application**
 
-QA verifies endpoint URLs, request and response formats, HTTP status codes (`201 Created`, `400 Bad Request`, `404 Not Found`, `409 Conflict`), and database relationships to ensure they meet the business requirements before implementation.
+QA verifies endpoint URLs, request and response formats, HTTP status codes (`201 Created`, `400 Bad Request`, `404 Not Found`, `409 Conflict`), and database relationships before backend development starts.
 
 ---
 
@@ -178,15 +180,15 @@ QA verifies endpoint URLs, request and response formats, HTTP status codes (`201
 
 ### 1. Defects Are Discovered Too Late
 
-Since testing begins only after development is completed, requirement misunderstandings may remain unnoticed until the testing phase, making them more expensive to fix.
+Since testing begins only after development is completed, requirement misunderstandings may remain unnoticed until system testing. Fixing these issues at a later stage requires significantly more effort.
 
 ### 2. Bug Fixing Becomes More Expensive
 
-A defect discovered late may require modifications to API logic, database schema, frontend integration, and documentation, increasing both development effort and project cost.
+A defect discovered late may require changes to API logic, database schema, frontend integration, and documentation, increasing both development cost and project effort.
 
 ### 3. Delayed Project Delivery
 
-If serious defects are identified near the end of development, additional debugging and retesting can delay the project release and reduce the overall testing time available.
+When major defects are identified near the end of development, additional debugging and retesting delay the project release and reduce the overall time available for testing.
 
 ---
 
@@ -194,25 +196,19 @@ If serious defects are identified near the end of development, additional debugg
 
 ### Sprint Planning
 
-QA reviews user stories, identifies test scenarios, discusses acceptance criteria, highlights testing effort and potential risks, and contributes to sprint estimation discussions.
-
----
+QA reviews user stories, identifies possible test scenarios, defines clear acceptance criteria, highlights testing effort and potential risks, and contributes to sprint estimation discussions.
 
 ### Daily Standup
 
-QA shares testing progress, reports newly discovered defects, discusses blockers (such as unavailable test environments or failed API deployments), and collaborates with developers to resolve issues quickly.
-
----
+QA shares testing progress, reports newly identified defects, discusses blockers such as unavailable test environments, and collaborates with developers to resolve issues quickly.
 
 ### Sprint Review
 
-QA validates that completed features satisfy the agreed acceptance criteria before they are demonstrated to stakeholders and confirms that completed functionality is ready for acceptance.
-
----
+QA validates that completed features satisfy the agreed acceptance criteria before they are demonstrated to stakeholders and confirms that completed functionality is ready for business acceptance.
 
 ### Sprint Retrospective
 
-QA discusses lessons learned, identifies process improvements, recommends better testing practices, suggests automation opportunities, and helps improve quality in future sprints.
+QA discusses lessons learned, identifies process improvements, recommends better testing practices, suggests automation opportunities, and helps improve software quality for future sprints.
 
 ---
 
@@ -224,27 +220,27 @@ QA reviews requirements before development begins to ensure they are complete, m
 
 **Application**
 
-Review the `POST /api/courses/` user story to confirm that validation rules (such as mandatory fields, course code format, and credit limits) are clearly specified.
+Review the `POST /api/courses/` user story to verify that validation rules, mandatory fields, course code format, and credit limits are clearly defined.
 
 ---
 
 ### (b) Writing Test Cases Before Code (TDD/BDD)
 
-QA prepares test cases before implementation so developers understand the expected system behavior.
+QA prepares test cases before implementation so developers understand the expected behavior of the system.
 
 **Application**
 
-Write automated test scenarios for successful course creation, invalid requests, and duplicate course codes before the API endpoint is implemented.
+Prepare automated test cases for successful course creation, invalid requests, and duplicate course codes before the API endpoint is implemented.
 
 ---
 
 ### (c) Static Code Analysis
 
-Developers use static analysis tools to identify coding issues without executing the application.
+Developers use static analysis tools to detect coding issues without executing the application.
 
 **Application**
 
-Use tools such as **Flake8**, **Pylint**, or **SonarQube** within the CI/CD pipeline to detect coding standard violations, security vulnerabilities, and potential bugs in the FastAPI project.
+Use tools such as **Flake8**, **Pylint**, or **SonarQube** within the CI/CD pipeline to identify coding standard violations, security vulnerabilities, and potential bugs in the FastAPI project.
 
 ---
 
@@ -260,35 +256,35 @@ Use **Postman** or **Pact** to verify that the `POST /api/courses/` endpoint fol
 
 ## 16. Acceptance Criteria (Given–When–Then)
 
-```
+```gherkin
 Feature: Create New Course
 
-As a college administrator,
-I want to create a new course,
-So that students can enroll in it.
+  As a college administrator
+  I want to create a new course
+  So that students can enroll in it
 
-Scenario: Successfully create a new course
-Given the college administrator is logged into the Course Management System
-When the administrator creates a new course with valid details
-Then the course should be created successfully
-And the system should display a confirmation message
-And the course should be stored in the database
+  Scenario: Successfully create a new course
+    Given the college administrator is logged into the Course Management System
+    When the administrator creates a new course with valid details
+    Then the course should be created successfully
+    And the system should display a confirmation message
+    And the course should be stored in the database
 
-Scenario: Prevent duplicate course creation
-Given a course with the same course code already exists
-When the administrator creates another course using the same course code
-Then the system should prevent the course from being created
-And an error message stating "Course code already exists" should be displayed
+  Scenario: Prevent duplicate course creation
+    Given a course with the same course code already exists
+    When the administrator creates another course using the same course code
+    Then the system should prevent the course from being created
+    And an error message stating "Course code already exists" should be displayed
 
-Scenario: Missing mandatory fields
-Given the administrator is creating a new course
-When one or more required fields are left empty
-Then the system should display validation messages for the missing fields
-And the course should not be created
+  Scenario: Missing mandatory fields
+    Given the administrator is creating a new course
+    When one or more required fields are left empty
+    Then the system should display validation messages for the missing fields
+    And the course should not be created
 ```
 
 ---
 
 # Conclusion
 
-This hands-on demonstrated how the Software Development Life Cycle (SDLC) and the Testing Life Cycle (TDLC) are connected through the V-Model. It explained the relationship between development and testing phases, the test artifacts produced during each stage, and the entry and exit criteria for every testing level. It also highlighted the importance of involving QA early in the development process, described the responsibilities of QA engineers throughout Agile ceremonies, explored practical Shift-Left testing techniques, and illustrated how business requirements can be converted into executable acceptance criteria using the Given–When–Then format. These practices help teams detect defects earlier, improve software quality, reduce development costs, and deliver reliable applications more efficiently.
+This hands-on demonstrated how the Software Development Life Cycle (SDLC) and the Testing Life Cycle (TDLC) are connected through the V-Model. It explained the relationship between development and testing phases, the test artifacts produced during each stage, and the entry and exit criteria for every testing level. It also highlighted the importance of involving QA early in the development process, described the responsibilities of QA engineers throughout Agile ceremonies, explored practical Shift-Left testing techniques, and illustrated how business requirements can be converted into executable acceptance criteria using the Given–When–Then format. These practices help teams identify defects earlier, improve software quality, reduce development costs, and deliver reliable software more efficiently.
