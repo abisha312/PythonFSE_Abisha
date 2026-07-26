@@ -32,13 +32,10 @@ The V-Model illustrates how each phase of the Software Development Life Cycle (S
                                 \ /
                               CODING
 ```
-```
+
 
 The left side of the V-Model represents the development phases, while the right side represents the corresponding testing phases. Coding forms the bottom vertex, connecting development and testing.
 
----
-
----
 
 ## 10. SDLC and TDLC Phase Mapping & Test Artifacts
 
