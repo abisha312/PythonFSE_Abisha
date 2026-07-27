@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--
+Hands-On 9 - Web Accessibility & Cross-Browser Compatibility
+
+Task 122 & 123
+Initial Lighthouse Scores
+Performance: 93
+Accessibility: 97
+Best Practices: 100
+SEO: 91
+
+Issues Identified
+1. Heading hierarchy not sequential.
+2. Search input missing label.
+3. Navigation missing aria-label.
+4. Meta description missing.
+5. Keyboard accessibility improvements required.
+
+Task 134
+Colour Contrast
+Before: #777777
+After: #333333
+Result: WCAG AA Contrast Passed (4.5:1 or greater)
+
+Task 135
+Cross Browser Testing
+Chrome : Passed
+Edge : Passed
+Firefox : Not Tested
+Safari : Not Tested
+
+Task 136
+Feature Checked using caniuse.com
+CSS Grid
+Chrome : Supported
+Edge : Supported
+Firefox : Supported
+Safari : Supported
+
+Task 131
+No expandable navigation/menu is present.
+aria-expanded is not applicable for this application.
+
+Task 132
+Keyboard Navigation Verified
+✓ Navigation links accessible
+✓ Search field accessible
+✓ Sort button accessible
+✓ Course cards accessible using Tab
+✓ Enter key activates course cards
+-->
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Student Portal for managing courses, grades and profile.">
+
+<title>Student Portal</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Task 137 -->
+<script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1 class="site-title">
+Student Portal
+</h1>
+
+<nav aria-label="Main navigation">
+
+<ul>
+
+<li>
+<a href="#" aria-current="page">
+Home
+</a>
+</li>
+
+<li>
+<a href="#">
+Courses
+</a>
+</li>
+
+<li>
+<a href="#">
+Profile
+</a>
+</li>
+
+<li>
+<a href="#">
+Grades
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<main>
+
+<section id="hero">
+
+<h2>
+Welcome to the Student Portal
+</h2>
+
+<p>
+Manage your courses, grades and profile.
+</p>
+
+<button type="button">
+Explore Courses
+</button>
+
+</section>
+
+<section class="stats-bar">
+
+<div class="stat-item">
+
+<h3>5</h3>
+
+<p>Courses</p>
+
+</div>
+
+<div class="stat-item">
+
+<h3>3.8</h3>
+
+<p>GPA</p>
+
+</div>
+
+<div class="stat-item">
+
+<h3>6</h3>
+
+<p>Semester</p>
+
+</div>
+
+</section>
+
+<section id="courses">
+
+<h2>
+Available Courses
+</h2>
+
+<label for="search-courses">
+Search Courses
+</label>
+
+<input
+id="search-courses"
+type="text"
+placeholder="Search courses..."
+aria-label="Search Courses"
+>
+
+<button
+id="sort-btn"
+type="button">
+Sort by Credits
+</button>
+
+<p
+id="course-count"
+role="status"
+aria-live="polite">
+5 courses found
+</p>
+
+<div
+class="course-grid"
+role="region"
+aria-label="Available Courses">
+
+<!-- Course cards generated dynamically -->
+
+</div>
+
+<p id="total-credits"></p>
+
+<div
+id="selected-course"
+role="status"
+aria-live="polite">
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+&copy; 2026 Student Portal
+</p>
+
+</footer>
+
+<script type="module" src="app.js"></script>
+
+<script>
+cssVars();
+</script>
+
+</body>
+</html>
